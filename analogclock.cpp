@@ -18,7 +18,7 @@ void Graph::paintEvent(QPaintEvent *)
     painter.translate(width() / 2, height() / 2);
     QColor lineColor(0, 12, 127, 232); //изменяем цвет рёбер
     QColor ellipseColor(127, 200, 56);//изменяем цвет вершин
-    int n=14;
+    int n=20;
     int Vitalich2=0;
     int Vitalich=0;
     int k2;
@@ -42,10 +42,9 @@ void Graph::paintEvent(QPaintEvent *)
     k=2;
     int r=30;
     int betta=180;
-     int i2=i1;
-    for (int i1=2; i1!=n+2; i1++)
+    for (i1=2; i1!=n+2; i1++)
     {
-        if (i1> k*(k+1)/2)
+        if (i1>k*(k+1)/2)
         {
             k++;//поднимаемся на один уровень выше
             r=r+100;
@@ -71,14 +70,14 @@ void Graph::paintEvent(QPaintEvent *)
                      Vitalich2=Vitalich2+90;
                      betta2=alpha2;
                      }
-               if(mas[i1-1][f]=1)
+               if (mas[i1-1][f]=1)
                {
-
-               painter.drawLine(r*sin((betta+Vitalich)*2*3.14159/360)+10,r*cos((betta+Vitalich)*2*3.14159/360)+10,r2*sin((betta2+Vitalich2)*2*3.14159/360)+10,r2*cos((betta2+Vitalich2)*2*3.14159/360)+10);
+                   painter.drawLine(r*sin((betta+Vitalich)*2*3.14159/360)+10,r*cos((betta+Vitalich)*2*3.14159/360)+10,r2*sin((betta2+Vitalich2)*2*3.14159/360)+10,r2*cos((betta2+Vitalich2)*2*3.14159/360)+10);
                }
                 betta2=betta2+alpha2;
        }
         Vitalich2=0;
         betta=betta+alpha;
     }
+
 }
